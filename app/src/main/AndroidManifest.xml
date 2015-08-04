@@ -8,11 +8,12 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <service
-            android:name=".RemoteWebpageService"
-            android:enabled="true"
+            android:name=".RemoteWebPageService"
+            android:process=":remote"
             android:exported="true" >
             <intent-filter>
                 <action android:name="net.callofdroidy.aidlquerywebpage" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
 

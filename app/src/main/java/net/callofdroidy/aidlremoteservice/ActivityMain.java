@@ -3,6 +3,8 @@ package net.callofdroidy.aidlremoteservice;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -11,7 +13,14 @@ public class ActivityMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startService(new Intent(ActivityMain.this, RemoteWebpageService.class));
+        findViewById(R.id.btn_fire).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("clicked", "");
+                startService(new Intent(ActivityMain.this, RemoteWebPageService.class));
+            }
+        });
+
     }
 
 }
